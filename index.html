@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teoria de Piaget</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffffcc;
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .overlay a {
+      color: white;
+      font-size: 2rem;
+      margin: 1rem;
+      text-decoration: none;
+    }
+
+    section {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .half-image {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+    }
+
+    .half-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+      background-color: white;
+    }
+
+    .half-text h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .half-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .burger {
+        display: flex;
+      }
+      section,
+      .reverse {
+        flex-direction: column !important;
+      }
+      .half-text {
+        padding: 2rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Piaget</div>
+    <nav>
+      <a href="#sensorio">Sensório-Motor</a>
+      <a href="#preoperacional">Pré-Operacional</a>
+      <a href="#concreto">Operatório Concreto</a>
+      <a href="#formal">Operatório Formal</a>
+    </nav>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="overlay" id="menuOverlay">
+    <a href="#sensorio" onclick="toggleMenu()">Sensório-Motor</a>
+    <a href="#preoperacional" onclick="toggleMenu()">Pré-Operacional</a>
+    <a href="#concreto" onclick="toggleMenu()">Operatório Concreto</a>
+    <a href="#formal" onclick="toggleMenu()">Operatório Formal</a>
+  </div>
+
+  <section id="sensorio">
+    <div class="half-image" style="background-image: url('https://melhordosbebes.com.br/wp-content/uploads/img/brinquedos-educativos-bebeteca1.jpg');"></div>
+    <div class="half-text">
+      <h1>Estágio Sensório-Motor (0-2 anos)</h1>
+      <p>Nesse estágio, o bebê explora o mundo através dos sentidos e das ações motoras. A permanência do objeto é uma conquista fundamental.</p>
+    </div>
+  </section>
+
+  <section id="preoperacional" class="reverse">
+    <div class="half-image" style="background-image: url('atividade-criativa-perfil-de-menino-sorridente-de-pele-escura-em-desenho-de-camiseta-verde-com-lapis-azul-sentado-a-mesa-na-sala-de-luz.jpg');"></div>
+    <div class="half-text">
+      <h1>Estágio Pré-Operacional (2-7 anos)</h1>
+      <p>A criança desenvolve linguagem e pensamento simbólico, mas ainda apresenta egocentrismo e dificuldade com lógica.</p>
+    </div>
+  </section>
+
+  <section id="concreto">
+    <div class="half-image" style="background-image: url('criancas-de-tiro-medio-desenhando-juntas.jpg');"></div>
+    <div class="half-text">
+      <h1>Estágio Operatório Concreto (7-12 anos)</h1>
+      <p>Nesse estágio, a criança desenvolve o pensamento lógico aplicado a objetos concretos. Ela entende conceitos como conservação e reversibilidade.</p>
+    </div>
+  </section>
+
+  <section id="formal" class="reverse">
+    <div class="half-image" style="background-image: url('https://www.shutterstock.com/image-photo/diverse-young-high-school-students-600nw-2508093341.jpg');"></div>
+    <div class="half-text">
+      <h1>Estágio Operatório Formal (12 anos em diante)</h1>
+      <p>Adolescentes passam a pensar logicamente sobre ideias abstratas, hipóteses e teorias, desenvolvendo pensamento científico.</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuOverlay');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Fade-in effect on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
