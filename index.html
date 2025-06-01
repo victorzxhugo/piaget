@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teoria de Piaget</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desenvolvimento do Bebê</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      scroll-behavior: smooth;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { scroll-behavior: smooth; font-family: Arial, sans-serif; }
+    body { overflow-x: hidden; }
     header {
       position: fixed;
-      top: 0;
-      width: 100%;
+      top: 0; width: 100%;
       background-color: #ffffffcc;
       backdrop-filter: blur(8px);
       z-index: 1000;
@@ -32,57 +19,23 @@
       align-items: center;
       padding: 1rem 2rem;
     }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-    }
-
+    .logo { font-weight: bold; font-size: 1.5rem; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: #333; font-weight: bold; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .burger div { width: 25px; height: 3px; background-color: #333; }
     .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
       background-color: rgba(0, 0, 0, 0.9);
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: none; flex-direction: column;
+      justify-content: center; align-items: center;
       z-index: 999;
     }
-
     .overlay a {
-      color: white;
-      font-size: 2rem;
-      margin: 1rem;
-      text-decoration: none;
+      color: white; font-size: 2rem;
+      margin: 1rem; text-decoration: none;
     }
-
     section {
       display: flex;
       min-height: 100vh;
@@ -91,19 +44,16 @@
       transform: translateY(40px);
       transition: opacity 1s ease, transform 1s ease;
     }
-
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .half-image {
       flex: 1;
       background-size: cover;
       background-position: center;
       min-height: 300px;
     }
-
     .half-text {
       flex: 1;
       display: flex;
@@ -112,30 +62,20 @@
       padding: 4rem;
       background-color: white;
     }
-
     .half-text h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
-
     .half-text p {
       font-size: 1.1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
-
-    .reverse {
-      flex-direction: row-reverse;
-    }
-
+    .reverse { flex-direction: row-reverse; }
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .burger {
-        display: flex;
-      }
-      section,
-      .reverse {
+      nav { display: none; }
+      .burger { display: flex; }
+      section, .reverse {
         flex-direction: column !important;
       }
       .half-text {
@@ -147,56 +87,105 @@
 </head>
 <body>
   <header>
-    <div class="logo">Piaget</div>
+    <div class="logo">Desenvolvimento do Bebê</div>
     <nav>
-      <a href="#sensorio">Sensório-Motor</a>
-      <a href="#preoperacional">Pré-Operacional</a>
-      <a href="#concreto">Operatório Concreto</a>
-      <a href="#formal">Operatório Formal</a>
+      <a href="#intro">Início</a>
+      <a href="#mes1a4">1 a 4 meses</a>
+      <a href="#mes4a8">4 a 8 meses</a>
+      <a href="#mes8a12">8 a 12 meses</a>
+      <a href="#mes12a18">12 a 18 meses</a>
+      <a href="#mes18a24">18 a 24 meses</a>
+      <a href="#imitacao">Imitação</a>
+      <a href="#respeito">Respeito ao tempo</a>
     </nav>
     <div class="burger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
   </header>
-
   <div class="overlay" id="menuOverlay">
-    <a href="#sensorio" onclick="toggleMenu()">Sensório-Motor</a>
-    <a href="#preoperacional" onclick="toggleMenu()">Pré-Operacional</a>
-    <a href="#concreto" onclick="toggleMenu()">Operatório Concreto</a>
-    <a href="#formal" onclick="toggleMenu()">Operatório Formal</a>
+    <a href="#intro" onclick="toggleMenu()">Início</a>
+    <a href="#mes1a4" onclick="toggleMenu()">1 a 4 meses</a>
+    <a href="#mes4a8" onclick="toggleMenu()">4 a 8 meses</a>
+    <a href="#mes8a12" onclick="toggleMenu()">8 a 12 meses</a>
+    <a href="#mes12a18" onclick="toggleMenu()">12 a 18 meses</a>
+    <a href="#mes18a24" onclick="toggleMenu()">18 a 24 meses</a>
+    <a href="#imitacao" onclick="toggleMenu()">Imitação</a>
+    <a href="#respeito" onclick="toggleMenu()">Respeito ao tempo</a>
   </div>
 
-  <section id="sensorio">
-    <div class="half-image" style="background-image: url('https://melhordosbebes.com.br/wp-content/uploads/img/brinquedos-educativos-bebeteca1.jpg');"></div>
+  <section id="intro" class="reverse">
+    <div class="half-image" style="background-image: url('intro.png');"></div>
     <div class="half-text">
-      <h1>Estágio Sensório-Motor (0-2 anos)</h1>
-      <p>Nesse estágio, o bebê explora o mundo através dos sentidos e das ações motoras. A permanência do objeto é uma conquista fundamental.</p>
+      <h1>🍼 Primeiros Passos: Entenda o Desenvolvimento do Seu Bebê</h1>
+      <p>Um guia completo para pais e cuidadores acompanharem, estimularem e protegerem os pequenos de 1 mês a 2 anos</p>
+      <p>Os primeiros anos de vida são um universo de descobertas para o bebê — e também para quem cuida. Nesta fase, o desenvolvimento acontece em ritmo acelerado: os sentidos despertam, os vínculos se fortalecem e a autonomia começa a surgir. Saber o que esperar em cada etapa ajuda a promover um ambiente seguro, afetuoso e cheio de estímulos saudáveis.</p>
     </div>
   </section>
 
-  <section id="preoperacional" class="reverse">
-    <div class="half-image" style="background-image: url('atividade-criativa-perfil-de-menino-sorridente-de-pele-escura-em-desenho-de-camiseta-verde-com-lapis-azul-sentado-a-mesa-na-sala-de-luz.jpg');"></div>
+  <section id="mes1a4">
+    <div class="half-image" style="background-image: url('1a4meses.png');"></div>
     <div class="half-text">
-      <h1>Estágio Pré-Operacional (2-7 anos)</h1>
-      <p>A criança desenvolve linguagem e pensamento simbólico, mas ainda apresenta egocentrismo e dificuldade com lógica.</p>
+      <h1>👶 De 1 a 4 meses: Sensações agradáveis e laços de afeto</h1>
+      <p>Nos primeiros meses, o bebê começa a perceber que algumas ações geram sensações agradáveis. Um exemplo clássico é chupar o dedo, ação que oferece conforto e prazer. Esses comportamentos repetitivos fazem parte do processo de autoconhecimento e autorregulação emocional.</p>
+      <p>Além disso, o bebê começa a reagir mais aos sons. A voz dos pais e cuidadores se torna especialmente significativa, oferecendo segurança e facilitando o início da linguagem. Por isso, é essencial conversar com o bebê, cantar, contar o que está acontecendo ao redor — mesmo que ele ainda não compreenda as palavras, ele percebe o tom de voz e os sentimentos transmitidos.</p>
+      <p>Também é comum nessa fase que o bebê queira explorar com as mãos e a boca. Pegar objetos, levá-los à boca ou cheirá-los é parte natural do desenvolvimento dos sentidos. O ideal é garantir um ambiente limpo e supervisionado, com objetos seguros para manipulação, evitando riscos como engasgos ou contaminações.  </p>
     </div>
   </section>
 
-  <section id="concreto">
-    <div class="half-image" style="background-image: url('criancas-de-tiro-medio-desenhando-juntas.jpg');"></div>
+  <section id="mes4a8" class="reverse">
+    <div class="half-image" style="background-image: url('4a8meses.png');"></div>
     <div class="half-text">
-      <h1>Estágio Operatório Concreto (7-12 anos)</h1>
-      <p>Nesse estágio, a criança desenvolve o pensamento lógico aplicado a objetos concretos. Ela entende conceitos como conservação e reversibilidade.</p>
+      <h1>🎨 De 4 a 8 meses: Os sentidos ganham o mundo</h1>
+      <p>Nesta etapa, os sentidos do bebê estão ainda mais apurados. Ele demonstra interesse crescente por tudo ao redor: sons variados, superfícies com diferentes texturas, novos sabores e cheiros. Essa é uma fase de intensa experimentação sensorial.</p>
+      <p>O bebê começa a agir de forma mais intencional. Já não reage apenas aos estímulos — ele faz por querer. É comum vê-lo derrubando objetos só para observar o som ou o movimento, ou então preferindo um brinquedo específico. Esse comportamento mostra que a criança está desenvolvendo memória, atenção e gostos pessoais.</p>
+      <p>Pais e cuidadores podem apoiar esse momento oferecendo brinquedos com elementos sensoriais diversos, como tecidos diferentes, brinquedos com luzes e sons suaves, objetos que possam ser amassados, apertados ou mordidos. A interação contínua com os adultos, como brincar junto e nomear os objetos, fortalece ainda mais os vínculos afetivos e cognitivos.</p>
     </div>
   </section>
 
-  <section id="formal" class="reverse">
-    <div class="half-image" style="background-image: url('https://www.shutterstock.com/image-photo/diverse-young-high-school-students-600nw-2508093341.jpg');"></div>
+  <section id="mes8a12">
+    <div class="half-image" style="background-image: url('https://via.placeholder.com/600x400');"></div>
     <div class="half-text">
-      <h1>Estágio Operatório Formal (12 anos em diante)</h1>
-      <p>Adolescentes passam a pensar logicamente sobre ideias abstratas, hipóteses e teorias, desenvolvendo pensamento científico.</p>
+      <h1>🚼 De 8 a 12 meses: Ações com propósito e início da autonomia</h1>
+      <p>Aqui, o bebê começa a compreender que certas ações podem ser aplicadas de diferentes formas para alcançar objetivos. Se antes ele engatinhava por curiosidade, agora ele pode engatinhar especificamente para pegar um brinquedo. Ele aprende a "generalizar" comportamentos e estratégias, o que é um marco importante no desenvolvimento cognitivo.</p>
+      <p>Também é possível perceber que ele está mais determinado: se um brinquedo está escondido, ele tenta empurrar outro objeto para alcançá-lo. Ele entende relações de causa e efeito de forma mais clara, o que abre espaço para brincadeiras mais complexas, como brinquedos de encaixe, empilhar blocos ou encontrar objetos escondidos.</p>
+      <p>É importante que o ambiente continue seguro para esse novo nível de mobilidade e autonomia. Essa fase é marcada por muita exploração física, então oferecer espaço, variedade de objetos e liberdade com supervisão é fundamental.</p>
+    </div>
+  </section>
+
+  <section id="mes12a18" class="reverse">
+    <div class="half-image" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+    <div class="half-text">
+      <h1>🌟 De 12 a 18 meses: Curiosidade em movimento</h1>
+      <p>O bebê agora está cheio de energia e sua curiosidade é a grande motivadora de suas ações. Ele experimenta o mundo para entender como tudo funciona. Por exemplo, pode pisar num brinquedo para ver o que acontece ou apertar repetidamente um botão para ouvir um som. Essa atitude investigativa é natural e saudável.</p>
+      <p>Essa fase também marca os primeiros passos no uso criativo dos objetos. Ele começa a usar um brinquedo de forma diferente da habitual ou a brincar de formas mais livres. Estimular essa criatividade é essencial para o desenvolvimento da imaginação, coordenação e linguagem.</p>
+      <p>Brinquedos simples, como blocos coloridos, instrumentos musicais infantis, livros com texturas ou figuras grandes e brinquedos de encaixe continuam sendo ótimos aliados. A presença ativa do cuidador, oferecendo nomes para os objetos e participando das brincadeiras, também é valiosa.</p>
+    </div>
+  </section>
+  <section id="mes18a24">
+    <div class="half-image" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+    <div class="half-text">
+      <h1>🧠 De 18 meses a 2 anos: Pensamento e imaginação em ação</h1>
+      <p>Entre 1 ano e meio e 2 anos, o bebê começa a desenvolver a capacidade de pensar antes de agir. Se antes a exploração acontecia quase sempre por tentativa e erro, agora ele consegue imaginar resultados antes de fazer. Essa habilidade representa o início de um pensamento mais simbólico e planejado.</p>
+      <p>É muito comum o surgimento das brincadeiras de faz de conta: a criança finge que está alimentando um boneco, imita um animal, ou transforma um objeto comum em algo imaginário (uma escova vira um microfone, por exemplo). Esse tipo de brincadeira ajuda a desenvolver a linguagem, a criatividade, a empatia e a resolução de problemas.</p>
+      <p>Brincadeiras como esconde-esconde, desenhar com giz ou lápis grandes, correr, rolar bolas, construir torres ou cuidar de bonecos são excelentes atividades para esse período. Elas permitem que a criança explore seu corpo, suas emoções e sua imaginação de forma segura e divertida.</p>
+    </div>
+  </section>
+
+  <section id="imitacao" class="reverse">
+    <div class="half-image" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+    <div class="half-text">
+      <h1>👨‍👩‍👧 A importância da imitação: aprendendo com o exemplo</h1>
+      <p>Nesta etapa, a criança aprende observando. A imitação é uma das formas mais poderosas de aprendizagem: ela observa os adultos e tenta repetir seus gestos, expressões e atitudes. Por isso, é essencial que pais e cuidadores sejam modelos positivos.</p>
+      <p>Mostrar hábitos saudáveis, como escovar os dentes, organizar os brinquedos, cumprimentar os outros com gentileza ou comer frutas, influencia diretamente o comportamento da criança. Quanto mais ela for incluída nas rotinas do dia a dia, mais segurança e senso de pertencimento ela desenvolve.</p>
+      <p>Aproveite esse momento para criar hábitos com afeto e presença. A criança está absorvendo tudo — e cada gesto conta.</p>
+    </div>
+  </section>
+
+  <section id="respeito">
+    <div class="half-image" style="background-image: url('https://via.placeholder.com/600x400');"></div>
+    <div class="half-text">
+      <h1>📌 Respeite o tempo do seu bebê</h1>
+      <p>Cada criança tem seu ritmo. Este guia serve como uma bússola, não como um cronômetro. O importante é oferecer um ambiente estimulante, seguro e cheio de carinho, respeitando as particularidades do seu filho(a). Se houver dúvidas ou preocupações, sempre busque o apoio de profissionais como pediatras, psicólogos ou especialistas em desenvolvimento infantil.</p>
     </div>
   </section>
 
@@ -206,7 +195,6 @@
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Fade-in effect on scroll
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -214,13 +202,9 @@
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
